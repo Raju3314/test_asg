@@ -36,11 +36,11 @@
     image_id      = data.aws_ami.amazon_linux_2.id
     instance_type = "t2.micro"
 
-  #   metadata_options {
-  #   http_endpoint               = "enabled"
-  #   http_tokens                = "required"    # This enforces IMDSv2
-  #   http_put_response_hop_limit = 2
-  # }
+    metadata_options {
+    http_endpoint               = "enabled"
+    http_tokens                = "required"    # This enforces IMDSv2
+    http_put_response_hop_limit = 2
+  }
   
     network_interfaces {
       associate_public_ip_address = true
