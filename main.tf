@@ -54,7 +54,7 @@
                 yum install -y httpd
                 systemctl start httpd
                 systemctl enable httpd
-                echo "<h1>Hello from EC2 instancev7</h1>" > /var/www/html/index.html
+                echo "<h1>Hello from EC2 instancev8</h1>" > /var/www/html/index.html
                 EOF
     )
   
@@ -84,15 +84,16 @@
       version = aws_launch_template.my_template.latest_version
     }
   
-    # # Instance refresh configuration
-    # instance_refresh {
-    #   strategy = "Rolling"
-    #   preferences {
-    #     min_healthy_percentage = 50
-    #     instance_warmup       = 60
-    #   }
-    #   triggers = ["launch_template"]  # Add this triggers block
-    # }
+    # Instance refresh configuration
+    instance_refresh {
+      strategy = "Rolling"
+      preferences {
+        min_healthy_percentage = 50
+        instance_warmup       = 60
+      }
+      triggers = ["launch_template"]  # Add this triggers block
+    }
+  
   
     tag {
       key                 = "Name"
