@@ -24,9 +24,7 @@
     }
   }
 
-  data "aws_kms_key" "existing_ebs_key" {
-  key_id = "alias/test-ebs"
-}
+
 
   
   # Launch Template
