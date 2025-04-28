@@ -2,7 +2,10 @@
   
   # Get default VPC
   data "aws_vpc" "default" {
-    default = true
+ filter {
+    name   = "tag:Name"
+    values = ["nna-ncgt-nonprod-us-west-2-pesh-nws-prod"]
+  }
   }
   
   # Get default subnets
