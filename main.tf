@@ -45,16 +45,7 @@
       associate_public_ip_address = true
     }
   
-    # Add block device mapping for the encrypted EBS volume
-  block_device_mappings {
-    device_name = "/dev/xvdf"
-    ebs {
-      volume_size           = 8
-      volume_type          = "gp3"
-      encrypted            = true
-      kms_key_id          = data.aws_kms_key.existing_ebs_key.arn
-      delete_on_termination = true
-    }
+
   }
     user_data = base64encode(<<-EOF
                 #!/bin/bash
