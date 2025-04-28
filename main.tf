@@ -44,7 +44,7 @@
     }
   
 
-  }
+  
     user_data = base64encode(<<-EOF
                 #!/bin/bash
                 yum update -y
