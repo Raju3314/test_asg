@@ -17,6 +17,7 @@
   }
   ##test
 ##test
+##test2
   # Get latest Amazon Linux 2 AMI
   data "aws_ami" "amazon_linux_2" {
     most_recent = true
