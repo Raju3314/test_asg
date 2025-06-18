@@ -1,6 +1,7 @@
 ##test
 ##test1
 ##test2
+##test3
   test
   # Get default VPC
   data "aws_vpc" "default" {
